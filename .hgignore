@@ -1,0 +1,6 @@
+glob:.classpath
+glob:.project
+glob:.settings/*
+glob:*.jar
+glob:bin/*
+glob:doc/*

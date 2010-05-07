@@ -1,0 +1,58 @@
+package gengames;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class IO {
+
+	private File loadFile, saveFile;
+	private String outputText;
+	private long timeCode;
+
+	public void save(String text, int counter) throws IOException {
+		FileWriter outputStream = null;
+		if (saveFile == null) {
+			saveFile = new File("");
+		}
+		outputText = text;
+
+		try {
+			outputStream = new FileWriter(new File(saveFile, timeCode + "gen_"
+					+ counter + ".txt"));
+			outputStream.write(outputText);
+
+		} finally {
+
+			if (outputStream != null) {
+				outputStream.close();
+			}
+		}
+
+	}
+
+	public void load(File file) {
+		// TODO this should load whatever data is requested
+	}
+
+	public void setTimeCode(long code) {
+		timeCode = code;
+	}
+
+	public void setLoadFile(File file) {
+		loadFile = file;
+	}
+
+	public void setSaveFile(File file) {
+		saveFile = file;
+	}
+
+	public File getSaveFile() {
+		return saveFile;
+	}
+
+	public File getLoadFile() {
+		return loadFile;
+	}
+
+}
