@@ -338,11 +338,17 @@ public class HeartsGameController extends GameController {
 	}
 
 	// Run Control methods
+	/**
+	 * @see gengames.GameController#runRound()
+	 */
 	@Override
 	public void runRound() {
 		runRound = true;
 	}
 
+	/**
+	 * @see gengames.GameController#setRunning(boolean)
+	 */
 	@Override
 	public void setRunning(boolean run) {
 		running = run;
@@ -376,16 +382,25 @@ public class HeartsGameController extends GameController {
 		}
 	}
 
+	/**
+	 * @see gengames.GameController#numPlayers()
+	 */
 	@Override
 	public int numPlayers() {
 		return NUM_PLAYERS;
 	}
 
+	/**
+	 * @see gengames.GameController#getPlayerBuilder()
+	 */
 	@Override
 	public PlayerBuilder getPlayerBuilder() {
 		return PLAYER_BUILDER;
 	}
 
+	/**
+	 * @see gengames.GameController#getDummyPlayerBuilder()
+	 */
 	@Override
 	public PlayerBuilder getDummyPlayerBuilder() {
 		return DUMMY_BUILDER;
@@ -412,6 +427,11 @@ public class HeartsGameController extends GameController {
 	
 
 
+	/**
+	 * Helper method to indicate a hand contains the two of clubs (indicating it's the starter hand)
+	 * @param hand the hand to check
+	 * @return if the hand has the two of clubs
+	 */
 	/*package*/ static boolean hasTwoOfClubs(Cards hand) {
 		for (Card card : hand) {
 			if (card.getSuit().equals(Suit.CLUBS)
@@ -422,6 +442,11 @@ public class HeartsGameController extends GameController {
 		return false;
 	}
 
+	/**
+	 * Helper method to indicate a card is the queen of spades
+	 * @param c the card to check
+	 * @return if the card is the queen of spades
+	 */
 	/*package*/ static boolean isQueenOfSpades(Card c) {
 		return c.equals(Suit.SPADES) && c.equals(Value.QUEEN);
 	}
