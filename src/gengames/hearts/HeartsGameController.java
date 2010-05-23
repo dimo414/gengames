@@ -84,7 +84,7 @@ public class HeartsGameController extends GameController {
 	@Override
 	public void interrupt() {
 		if (!gameOver()) {
-			System.err.println("Game interrupted!");
+			output.append("\n\nGame interrupted!");
 			gameThread.interrupt();
 		}
 	}
@@ -134,9 +134,8 @@ public class HeartsGameController extends GameController {
 				player[i].addToFitness(gameScore[i]);
 			}
 		} catch (InterruptedException e) {
-			output.append("ERROR.  GAME INTERRUPTED BEFORE GAME OVER.");
-			System.err
-					.println("Game interrupted before game over.  Data may be damaged.");
+			output.append("\nERROR.  GAME INTERRUPTED BEFORE GAME OVER.");
+			output.append("\n\nGame interrupted before game over.  Data may be damaged.");
 			interrupted = true;
 		}
 	}

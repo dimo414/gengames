@@ -62,7 +62,7 @@ public class DummyGAController extends GAController {
 		}
 		if (game == null) {
 			exc.printStackTrace();
-			throw new RuntimeException("No acceptable constructor found."); // FIXME
+			throw new RuntimeException("No acceptable constructor found."); // This was marked 'fixme' but I don't know why - there was no note
 		}
 
 		gaOutput.setText("Starting Game Between Real Players:\n");
