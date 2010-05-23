@@ -144,7 +144,6 @@ public class GAFrame extends JFrame implements ActionListener {
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	public void actionPerformed(ActionEvent evt) {
-		System.out.println(running);
 		try {
 			Object src = evt.getSource();
 			// Identify Games
@@ -454,7 +453,8 @@ public class GAFrame extends JFrame implements ActionListener {
 		loadPopItem.addActionListener(this);
 		fileMenu.add(loadPopItem);
 		
-		menuBar.add(fileMenu);
+		// TODO this needs to be implemented first, no?
+	//	menuBar.add(fileMenu);
 
 		runsMenu.setText("Run Types");
 

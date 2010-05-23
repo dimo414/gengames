@@ -192,10 +192,8 @@ public class GAController implements Runnable {
 			}
 
 		} catch (InterruptedException e) {
-			output
-					.append("ERROR.  GA CONTROLLER WAS INTERRUPTED WHILE RUNNING.\n");
-			System.err
-					.println("Generation interrupted before generation over.  Data may be damaged.");
+			output.append("\nERROR.  GA CONTROLLER WAS INTERRUPTED WHILE RUNNING.\n");
+			output.append("\n\nGeneration interrupted before generation over.  Data may be damaged.");
 		}
 	}
 
@@ -529,11 +527,12 @@ public class GAController implements Runnable {
 	 * Instructs the GA controller it should interrupt any running games and terminate its thread.
 	 */
 	public void interrupt() {
+		running = false;
 		if (game != null)
 			game.interrupt();
 
 		if (!safeToInterrupt()) {
-			System.err.println("GA INTERRUPTED!");
+			output.append("\n\nGA INTERRUPTED!");
 		}
 		GAThread.interrupt();
 	}

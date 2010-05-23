@@ -220,7 +220,7 @@ public class HeartsPlayer extends Player {
 		if (size == myHand.size())
 			System.err.println("If trait is " + tr + " trick is " + trick
 					+ " and choices are " + playableCards
-					+ " we don't remove anything.");
+					+ " we failed to remove anything.");
 		return ret;
 	}
 
