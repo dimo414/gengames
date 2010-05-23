@@ -11,12 +11,23 @@ import gengames.deck.Deck;
 import gengames.deck.Suit;
 import gengames.deck.Value;
 
+/**
+ * Hearts implementation of the GameController, plays a game of hearts with four HeartsPlayers
+ * @author Michael Diamond
+ * @author Blake Lavender
+ * @see gengames.GameController GameController
+ */
 public class HeartsGameController extends GameController {
+	/** The PlayerBuilder for the GAController */
 	protected static final PlayerBuilder PLAYER_BUILDER = new HeartsPlayerBuilder();
+	/** The Dummy PlayerBuilder for the GAController */
 	protected static final PlayerBuilder DUMMY_BUILDER = new DummyHeartsPlayerBuilder();
+	/** The final score a player must reach to win */
 	protected static final int GAME_OVER_SCORE = 100;
+	/** The number of players in this game */
 	protected static final int NUM_PLAYERS = 4;
 
+	/** The group of players in this game */
 	protected HeartsPlayer[] player = new HeartsPlayer[4];
 	private int[] gameScore = new int[4];
 	private int[] tempScore = new int[4];
@@ -27,6 +38,7 @@ public class HeartsGameController extends GameController {
 	private boolean running;
 	private boolean runRound;
 	private boolean heartsBroken;
+	/** Tracks when the game is over. */
 	protected boolean gameOver;
 
 	private Thread gameThread;
@@ -35,10 +47,19 @@ public class HeartsGameController extends GameController {
 
 	private boolean interrupted = false;
 
+	/**
+	 * Do-nothing constructor for DummyGameController to extend.
+	 */
 	public HeartsGameController() {
 		// THIS DOES NOTHING. EXISTS SOLELY FOR SPECIAL CASES CALLS.
 	}
 
+	/**
+	 * Constructs a new HeartsGameController, starting a game with the passed players.
+	 * @param ps set of players to participate in this game
+	 * @param gameOutput the JTextArea to report output to
+	 * @param run starts the game playing or paused
+	 */
 	public HeartsGameController(Player[] ps, JTextArea gameOutput, boolean run) {
 		// playing the game should be in its own thread
 		if (ps.length != NUM_PLAYERS)
@@ -57,6 +78,9 @@ public class HeartsGameController extends GameController {
 		gameThread.start();
 	}
 
+	/**
+	 * @see gengames.GameController#interrupt()
+	 */
 	@Override
 	public void interrupt() {
 		if (!gameOver()) {
@@ -65,16 +89,26 @@ public class HeartsGameController extends GameController {
 		}
 	}
 
+	/**
+	 * @see gengames.GameController#gameOver()
+	 */
 	@Override
 	public boolean gameOver() {
 		return gameOver;
 	}
 
+	/**
+	 * @see gengames.GameController#interrupted()
+	 */
 	@Override
 	public boolean interrupted() {
 		return interrupted;
 	}
 
+	/**
+	 * @see gengames.GameController#run()
+	 */
+	@Override
 	public void run() {
 		try {
 
@@ -237,6 +271,12 @@ public class HeartsGameController extends GameController {
 		return winningPos;
 	}
 
+	/**
+	 * Determines which cards can be played at this time
+	 * @param trickCards the cards played so far this trick
+	 * @param hand the cards in the player's hand
+	 * @return the set of cards available to be played
+	 */
 	protected Cards possibleCards(Cards trickCards, Cards hand) {
 		if (trickCards.size() > 0) // respond to start of trick
 		{

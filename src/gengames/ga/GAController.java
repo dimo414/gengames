@@ -82,7 +82,7 @@ public class GAController implements Runnable {
 	 * @param gcc Class object indicating the GameController to play with
 	 * @param gameOutput JTextArea to output game data to
 	 * @param gaOutput JTextArea to output GA data to
-	 * @param rl The {@link RunLevel} for this GA instance
+	 * @param rl The {@link gengames.RunLevel RunLevel} for this GA instance
 	 */
 	public GAController(Class<? extends GameController> gcc,
 			JTextArea gameOutput, JTextArea gaOutput, RunLevel rl) {

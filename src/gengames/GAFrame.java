@@ -24,7 +24,7 @@ import javax.swing.JTextArea;
 
 /**
  * <p>This is the main class Genetic Games runs.  It is a GUI interface to the GA controller and loads all GameController classes dynamically.
- * GAFrame lets the user load any class that properly extends {@link GameController} and run a genetic algorithm against user defined strategies.</p>
+ * GAFrame lets the user load any class that properly extends {@link gengames.GameController GameController} and run a genetic algorithm against user defined strategies.</p>
  * 
  *  <h2>Configuring GAFrame</h2>
  *  <p>There are two primary ways to execute a third party GameController, compile-time inclusion and runtime inclusion.
