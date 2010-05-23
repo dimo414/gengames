@@ -11,7 +11,7 @@ import gengames.hearts.traits.*;
 
 /**
  * This is a dummy class for a simple player which will be easy to implement and use during testing
- * It should extend and nullify the effects of EVERY method of Player
+ * It should extend and nullify the effects of every method of Player.
  * @author Michael Diamond
  * @author Blake Lavender
  * @see gengames.hearts.HeartsPlayer HeartsPlayer
@@ -64,8 +64,6 @@ public class DummyHeartsPlayer extends HeartsPlayer {
 	/**
 	 * @see gengames.hearts.HeartsPlayer#nextMove(gengames.deck.Cards, gengames.deck.Cards)
 	 */
-	// Obviously this will change depending on the strategy (in the complete
-	// version)
 	@Override
 	public Card nextMove(Cards trick, Cards playableCards) {
 		// sort playable cards and take the highest one
