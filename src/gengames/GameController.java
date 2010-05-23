@@ -2,7 +2,7 @@ package gengames;
 
 /**
  *<p>This is the primary class to be extended by third party developers looking to create their own game.  Developers will need to implement
- * extensions to the following classes in addition to GameController: {@link Player}, {@link PlayerBuilder}, and {@link Trait}.</p>
+ * extensions to the following classes in addition to GameController: {@link gengames.Player Player}, {@link gengames.PlayerBuilder PlayerBuilder}, and {@link gengames.Trait Trait}.</p>
  * 
  * <h2>Requirements for Proper Extension of GameController</h2>
  * <h3>Constructors</h3>

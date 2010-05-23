@@ -9,13 +9,19 @@ import gengames.deck.Cards;
 import gengames.deck.ValueComparator;
 import gengames.hearts.traits.*;
 
-/*
+/**
  * This is a dummy class for a simple player which will be easy to implement and use during testing
  * It should extend and nullify the effects of EVERY method of Player
+ * @author Michael Diamond
+ * @author Blake Lavender
+ * @see gengames.hearts.HeartsPlayer HeartsPlayer
  */
 public class DummyHeartsPlayer extends HeartsPlayer {
 	private static final int TRAIT_SIZE = 1;
 
+	/**
+	 * @param str creates a DummyHeartsPlayer with the passed strategy
+	 */
 	public DummyHeartsPlayer(Trait[] str) {
 		if (str.length != TRAIT_SIZE)
 			throw new RuntimeException("HeartsPlayer expects an array of "
@@ -24,6 +30,9 @@ public class DummyHeartsPlayer extends HeartsPlayer {
 	}
 
 	// Game Methods
+	/**
+	 * @see gengames.hearts.HeartsPlayer#passTo(int)
+	 */
 	@Override
 	public Cards passTo(int player) {
 		Collections.sort(myHand, new ValueComparator());
@@ -52,6 +61,9 @@ public class DummyHeartsPlayer extends HeartsPlayer {
 		return passedCards;
 	}
 
+	/**
+	 * @see gengames.hearts.HeartsPlayer#nextMove(gengames.deck.Cards, gengames.deck.Cards)
+	 */
 	// Obviously this will change depending on the strategy (in the complete
 	// version)
 	@Override
@@ -80,6 +92,9 @@ public class DummyHeartsPlayer extends HeartsPlayer {
 		return play;
 	}
 
+	/**
+	 * @see gengames.hearts.HeartsPlayer#traitSize()
+	 */
 	@Override
 	public int traitSize() {
 		return TRAIT_SIZE;

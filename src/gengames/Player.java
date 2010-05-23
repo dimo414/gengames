@@ -6,7 +6,7 @@ package gengames;
  * own to be compatible with their GameController.  The player's strategy is represented by an array of Traits.</p>
  * 
  * <p>The player should not have any public constructors, instead constructors should be package accessible
- * (that is to say no access flag before the constructor) so that only the {@link PlayerBuilder} class can construct new Players.</p>
+ * (that is to say no access flag before the constructor) so that only the {@link gengames.PlayerBuilder PlayerBuilder} class can construct new Players.</p>
  * 
  * @author Michael Diamond
  * @author Blake Lavender

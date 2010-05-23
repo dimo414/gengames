@@ -16,6 +16,7 @@ import gengames.hearts.traits.*;
  * Hearts implementation of the Player object, follows a strategy for playing hearts defined genetically. 
  * @author Michael Diamond
  * @author Blake Lavender
+ * @see gengames.Player Player
  */
 public class HeartsPlayer extends Player {
 	/**
@@ -83,7 +84,7 @@ public class HeartsPlayer extends Player {
 	}
 
 	/**
-	 * Constructs a new player.  The {@link HeartsPlayerBuilder} builds the player, populating it with Traits which defines how the Player will behave.
+	 * Constructs a new player.  The {@link gengames.hearts.HeartsPlayerBuilder} builds the player, populating it with Traits which defines how the Player will behave.
 	 * @param str an array of Trait objects.
 	 */
 	/* package */HeartsPlayer(Trait[] str) {
@@ -664,7 +665,7 @@ public class HeartsPlayer extends Player {
 	/**
 	 * Compares this player with another player to determine genetic superiority.
 	 * @param other the player to compare with.
-	 * @see gengames.Player#compareTo(gengames.Player)
+	 * @see gengames.Player#compareTo(gengames.Player) Player
 	 */
 	@Override
 	public int compareTo(Player other) {
@@ -680,7 +681,7 @@ public class HeartsPlayer extends Player {
 
 	/**
 	 * toString() method.
-	 * @see gengames.Player#toString()
+	 * @see gengames.Player#toString() Player
 	 */
 	@Override
 	public String toString() {
@@ -693,7 +694,7 @@ public class HeartsPlayer extends Player {
 
 	/**
 	 * Returns a structured description of the player's strategy.
-	 * @see gengames.Player#traitDescription()
+	 * @see gengames.Player#traitDescription() Player
 	 */
 	@Override
 	public String traitDescription() {
@@ -800,7 +801,7 @@ public class HeartsPlayer extends Player {
 
 	/**
 	 * Indicates the expected size of the trait array.
-	 * @see gengames.Player#traitSize()
+	 * @see gengames.Player#traitSize() Player
 	 */
 	@Override
 	public int traitSize() {
