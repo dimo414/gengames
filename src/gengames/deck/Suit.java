@@ -6,8 +6,8 @@ package gengames.deck;
  * @author Blake Lavender
  */
 public enum Suit {
-	/** The enum representing Clubs */		CLUBS, 
-	/** The enum representing Diamonds */	DIAMONDS, 
-	/** The enum representing Spades */		SPADES, 
-	/** The enum representing Hearts */		HEARTS;
+    /** The enum representing Clubs */      CLUBS, 
+    /** The enum representing Diamonds */   DIAMONDS, 
+    /** The enum representing Spades */     SPADES, 
+    /** The enum representing Hearts */     HEARTS;
 }

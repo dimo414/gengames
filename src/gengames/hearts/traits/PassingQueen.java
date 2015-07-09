@@ -9,27 +9,27 @@ import gengames.Trait;
  * @author Blake Lavender
  */
 public enum PassingQueen implements Trait {
-	/** Attempt to pass Q&spades; */
-	LOSEQUEEN,
-	/** Hold onto the queen */
-	KEEPQUEEN;
+    /** Attempt to pass Q&spades; */
+    LOSEQUEEN,
+    /** Hold onto the queen */
+    KEEPQUEEN;
 
-	/**
-	 * @see gengames.Trait#mutate()
-	 */
-	public Trait mutate() {
-		PassingQueen choose = (PassingQueen) pickOne();
-		if (choose == this)
-			return mutate();
-		return choose;
-	}
+    /**
+     * @see gengames.Trait#mutate()
+     */
+    public Trait mutate() {
+        PassingQueen choose = (PassingQueen) pickOne();
+        if (choose == this)
+            return mutate();
+        return choose;
+    }
 
-	/**
-	 * @see gengames.Trait#pickOne()
-	 */
-	public Trait pickOne() {
-		PassingQueen[] arr = values();
-		int index = arr.length;
-		return arr[GAFrame.rnd.nextInt(index)];
-	}
+    /**
+     * @see gengames.Trait#pickOne()
+     */
+    public Trait pickOne() {
+        PassingQueen[] arr = values();
+        int index = arr.length;
+        return arr[GAFrame.rnd.nextInt(index)];
+    }
 }

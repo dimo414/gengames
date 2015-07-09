@@ -6,12 +6,12 @@ package gengames.ga;
  * @author Blake Lavender
  */
 public class InvalidRequestException extends Exception {
-	/**
-	 * @param str error message
-	 */
-	public InvalidRequestException(String str) {
-		super(str);
-	}
+    /**
+     * @param str error message
+     */
+    public InvalidRequestException(String str) {
+        super(str);
+    }
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 }

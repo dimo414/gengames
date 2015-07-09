@@ -4,13 +4,13 @@
  * <pre>Each Gene Is A Time In Play:
 Set of things to track for the set of normal traits
 
-	Starting Trick vs In Play				S/P
-	Hearts Broken vs Hearts Not Broken 		B/N
-	Queen Played vs Not Played				P/N
-	Queen Is/Was Ours vs Elsewhere 			H/E 	// maybe tracking where exactly it is
-	Opponent Could Shoot The Moon vs Safe 	M/S 	// danger is if a player has taken the queen and hearts hasn't broken / they've taken all the hearts thusfar and the queen - not sure how to track
-	Took Queen vs Hasn't Taken Queen 		Q/N
-	
+    Starting Trick vs In Play               S/P
+    Hearts Broken vs Hearts Not Broken      B/N
+    Queen Played vs Not Played              P/N
+    Queen Is/Was Ours vs Elsewhere          H/E     // maybe tracking where exactly it is
+    Opponent Could Shoot The Moon vs Safe   M/S     // danger is if a player has taken the queen and hearts hasn't broken / they've taken all the hearts thusfar and the queen - not sure how to track
+    Took Queen vs Hasn't Taken Queen        Q/N
+    
 Looks like there will be 64 combinations
 Here are the possible combinations:
 --
@@ -63,60 +63,60 @@ PNNEMN
 There are several cases however which don't make sense, here they (some of them?) are:
 
 SBPHMQ
-	Starting Trick
-	Hearts Broken
-	Queen Played
-	Queen Is/Was Ours
-	Opponent Could Shoot The Moon
-	Took Queen
+    Starting Trick
+    Hearts Broken
+    Queen Played
+    Queen Is/Was Ours
+    Opponent Could Shoot The Moon
+    Took Queen
 
 SNPHMN
-	Starting Trick
-	Hearts Broken
-	Queen Played
-	Queen Is/Was Ours
-	Opponent Could Shoot The Moon
-	Hasn't Taken Queen
-	
+    Starting Trick
+    Hearts Broken
+    Queen Played
+    Queen Is/Was Ours
+    Opponent Could Shoot The Moon
+    Hasn't Taken Queen
+    
 SBPHSQ
-	Starting Trick
-	Hearts Broken
-	Queen Played
-	Queen Is/Was Ours
-	Safe
-	Took Queen
+    Starting Trick
+    Hearts Broken
+    Queen Played
+    Queen Is/Was Ours
+    Safe
+    Took Queen
 
 SBPHSN
-	Starting Trick
-	Hearts Broken
-	Queen Played
-	Queen Is/Was Ours
-	Safe
-	Hasn't Taken Queen
-	
+    Starting Trick
+    Hearts Broken
+    Queen Played
+    Queen Is/Was Ours
+    Safe
+    Hasn't Taken Queen
+    
 SBPEMQ
-	Starting Trick
-	Hearts Broken
-	Queen Played
-	Elsewhere
-	Opponent Could Shoot The Moon
-	Took Queen
-	
+    Starting Trick
+    Hearts Broken
+    Queen Played
+    Elsewhere
+    Opponent Could Shoot The Moon
+    Took Queen
+    
 SBPEMN
-	Starting Trick
-	Hearts Broken
-	Queen Played
-	Elsewhere
-	Opponent Could Shoot The Moon
-	Hasn't Taken Queen
-	
+    Starting Trick
+    Hearts Broken
+    Queen Played
+    Elsewhere
+    Opponent Could Shoot The Moon
+    Hasn't Taken Queen
+    
 SBPESQ
-	Starting Trick
-	Hearts Broken
-	Queen Played
-	Elsewhere
-	Safe
-	Took Queen
+    Starting Trick
+    Hearts Broken
+    Queen Played
+    Elsewhere
+    Safe
+    Took Queen
 </pre>
  */
 

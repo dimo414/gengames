@@ -6,53 +6,53 @@ import java.io.IOException;
 
 public class IO {
 
-	private File loadFile, saveFile;
-	private String outputText;
-	private long timeCode;
+    private File loadFile, saveFile;
+    private String outputText;
+    private long timeCode;
 
-	public void save(String text, int counter) throws IOException {
-		FileWriter outputStream = null;
-		if (saveFile == null) {
-			saveFile = new File("");
-		}
-		outputText = text;
+    public void save(String text, int counter) throws IOException {
+        FileWriter outputStream = null;
+        if (saveFile == null) {
+            saveFile = new File("");
+        }
+        outputText = text;
 
-		try {
-			outputStream = new FileWriter(new File(saveFile, timeCode + "gen_"
-					+ counter + ".txt"));
-			outputStream.write(outputText);
+        try {
+            outputStream = new FileWriter(new File(saveFile, timeCode + "gen_"
+                    + counter + ".txt"));
+            outputStream.write(outputText);
 
-		} finally {
+        } finally {
 
-			if (outputStream != null) {
-				outputStream.close();
-			}
-		}
+            if (outputStream != null) {
+                outputStream.close();
+            }
+        }
 
-	}
+    }
 
-	public void load(File file) {
-		// TODO this should load whatever data is requested
-	}
+    public void load(File file) {
+        // TODO this should load whatever data is requested
+    }
 
-	public void setTimeCode(long code) {
-		timeCode = code;
-	}
+    public void setTimeCode(long code) {
+        timeCode = code;
+    }
 
-	public void setLoadFile(File file) {
-		loadFile = file;
-	}
+    public void setLoadFile(File file) {
+        loadFile = file;
+    }
 
-	public void setSaveFile(File file) {
-		saveFile = file;
-	}
+    public void setSaveFile(File file) {
+        saveFile = file;
+    }
 
-	public File getSaveFile() {
-		return saveFile;
-	}
+    public File getSaveFile() {
+        return saveFile;
+    }
 
-	public File getLoadFile() {
-		return loadFile;
-	}
+    public File getLoadFile() {
+        return loadFile;
+    }
 
 }
