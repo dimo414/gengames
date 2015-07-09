@@ -18,13 +18,13 @@ Set of things to track for the set of normal traits
 * **Queen Played vs. Not Played**              P/N
 * **Queen Is/Was Ours vs. Elsewhere**          H/E
   
-  maybe tracking where exactly it is
+    maybe tracking where exactly it is
 
 * **Opponent Could Shoot The Moon vs. Safe**   M/S
 
-  danger is if a player has taken the queen and
-  hearts hasn't broken / they've taken all the
-  hearts thusfar and the queen - not sure how to track
+    danger is if a player has taken the queen and
+    hearts hasn't broken / they've taken all the
+    hearts thusfar and the queen - not sure how to track
   
 * **Took Queen vs. Hasn't Taken Queen**        Q/N
     
