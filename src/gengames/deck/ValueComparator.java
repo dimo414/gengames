@@ -16,6 +16,7 @@ public class ValueComparator implements Comparator<Card> {
      * @return An integer representing which is larger.
      * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
      */
+    @Override
     public int compare(Card one, Card two) {
         if (!one.getValue().equals(two.getValue()))
             return one.getValue().compareTo(two.getValue());

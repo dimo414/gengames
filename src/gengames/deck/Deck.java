@@ -63,10 +63,10 @@ public class Deck {
      * @throws RuntimeException if the deck is empty.
      */
     public Card deal() {
-        if (hasCards())
+        if (hasCards()) {
             return deck.get(nextCard++);
-        else
-            throw new RuntimeException("Deck is empty - nothing to deal.");
+        }
+        throw new RuntimeException("Deck is empty - nothing to deal.");
     }
 
     /**

@@ -1,14 +1,14 @@
 package gengames;
 
 /**
- *  This interface indicates an object is a trait in the set of traits the player could use.  Traits are equivilent to genes. 
+ *  This interface indicates an object is a trait in the set of traits the player could use.  Traits are equivalent to genes. 
  *  Authors of third party players are welcome to use whatever objects they would like, though in general enums are suggested.
  * @author Michael Diamond
  * @author Blake Lavendar
  */
 public interface Trait {
     /**
-     * Mutates the current trait and returns a new trait randomly from the set of possible traits <em>excluiding</em> the current trait.
+     * Mutates the current trait and returns a new trait randomly from the set of possible traits <em>excluding</em> the current trait.
      * @return a mutated trait.  A suggested implementation is to use pickOne() and while pickOne() returns the same trait, call pickOne() again.
      * @see gengames.GAFrame#rnd
      */
@@ -24,5 +24,6 @@ public interface Trait {
      * The text representation of the current trait.
      * @return trait name.
      */
+    @Override
     public String toString();
 }

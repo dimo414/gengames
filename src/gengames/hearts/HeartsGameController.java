@@ -140,7 +140,7 @@ public class HeartsGameController extends GameController {
         }
     }
 
-    private void playRound() throws InterruptedException {
+    private void playRound() {
         output.append("Starting round: " + round++ + "\n");
         tempScore = new int[4];
         theDeck.shuffle();
@@ -218,29 +218,29 @@ public class HeartsGameController extends GameController {
         passType = passType.next();
     }
 
-    private int playTrick(int start) throws InterruptedException {
-        Cards trick = new Cards();
+    private int playTrick(int start) {
+        Cards localTrick = new Cards();
 
         // Gather cards from players
         for (int i = 0; i < 4; i++) {
-            Cards playableCards = possibleCards(trick, player[(start + i) % 4]
+            Cards playableCards = possibleCards(localTrick, player[(start + i) % 4]
                     .getHand());
-            trick.add(player[(start + i) % 4].nextMove(trick, playableCards));
+            localTrick.add(player[(start + i) % 4].nextMove(localTrick, playableCards));
             output.append("Player " + ((start + i) % 4) + " played "
-                    + trick.get(trick.size() - 1) + "\n");
-            if (!heartsBroken && trick.get(i).getSuit().equals(Suit.HEARTS)) {
+                    + localTrick.get(localTrick.size() - 1) + "\n");
+            if (!heartsBroken && localTrick.get(i).getSuit().equals(Suit.HEARTS)) {
                 output.append("HEARTS BROKE!\n");
                 heartsBroken = true;
             }
         }
 
         // Determine player who wins
-        Card bestCard = trick.get(0);
+        Card bestCard = localTrick.get(0);
         int winningPos = 0;
-        for (int i = 0; i < trick.size(); i++) {
-            if (bestCard.getSuit().equals(trick.get(i).getSuit())
-                    && bestCard.getValue().compareTo(trick.get(i).getValue()) < 0) {
-                bestCard = trick.get(i);
+        for (int i = 0; i < localTrick.size(); i++) {
+            if (bestCard.getSuit().equals(localTrick.get(i).getSuit())
+                    && bestCard.getValue().compareTo(localTrick.get(i).getValue()) < 0) {
+                bestCard = localTrick.get(i);
                 winningPos = i;
             }
         }
@@ -253,8 +253,8 @@ public class HeartsGameController extends GameController {
                                                                             // purpose
         // Update score, clear cards
         int origScore = tempScore[winningPos];
-        for (int i = 0; i < trick.size(); i++) {
-            Card card = trick.get(i);
+        for (int i = 0; i < localTrick.size(); i++) {
+            Card card = localTrick.get(i);
             if (card.getSuit().equals(Suit.HEARTS))
                 tempScore[winningPos] += 1;
             else if (card.getSuit().equals(Suit.SPADES)
@@ -265,7 +265,7 @@ public class HeartsGameController extends GameController {
 
         // Inform players
         for (HeartsPlayer p : player) {
-            p.trickOver(winningPos, trick);
+            p.trickOver(winningPos, localTrick);
         }
         return winningPos;
     }

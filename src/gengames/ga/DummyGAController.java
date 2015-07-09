@@ -3,6 +3,7 @@ package gengames.ga;
 import java.lang.reflect.Constructor;
 
 import gengames.GameController;
+import gengames.GenGameImplementationException;
 import gengames.Player;
 import gengames.PlayerBuilder;
 import gengames.RunLevel;
@@ -52,17 +53,13 @@ public class DummyGAController extends GAController {
         arr[1] = gameOutput;
         arr[2] = running || runGen || runGame;
         Constructor<?>[] constructs = gameClass.getConstructors();
-        Exception exc = null;
         for (Constructor<?> con : constructs) {
             try {
                 game = (GameController) con.newInstance(arr);
             } catch (Exception e) {
-                exc = e;
+                e.printStackTrace();
+                throw new GenGameImplementationException("No acceptable constructor found.", e);
             }
-        }
-        if (game == null) {
-            exc.printStackTrace();
-            throw new RuntimeException("No acceptable constructor found."); // This was marked 'fixme' but I don't know why - there was no note
         }
 
         gaOutput.setText("Starting Game Between Real Players:\n");
