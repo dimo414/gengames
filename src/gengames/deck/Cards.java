@@ -9,6 +9,6 @@ import java.util.ArrayList;
  * @author Blake Lavender
  */
 public class Cards extends ArrayList<Card> {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
 }

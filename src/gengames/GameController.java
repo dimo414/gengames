@@ -40,60 +40,60 @@ package gengames;
  * @author Blake Lavender
  */
 public abstract class GameController implements Runnable {
-	
-	/**
-	 * This method should contain the gameplay, including pausing mechanisms if the game is not supposed to be running.
-	 * @see java.lang.Runnable#run()
-	 */
-	public abstract void run();
-	
-	/**
-	 * Call to interrupt the game, the game is expected to then stop execution and end the game thread immediately.  If the game is already
-	 * over (as defined by gameOver()) it is acceptable for this method to do nothing and just return, as the game thread should have already
-	 * ended.
-	 */
-	public abstract void interrupt();
+    
+    /**
+     * This method should contain the gameplay, including pausing mechanisms if the game is not supposed to be running.
+     * @see java.lang.Runnable#run()
+     */
+    public abstract void run();
+    
+    /**
+     * Call to interrupt the game, the game is expected to then stop execution and end the game thread immediately.  If the game is already
+     * over (as defined by gameOver()) it is acceptable for this method to do nothing and just return, as the game thread should have already
+     * ended.
+     */
+    public abstract void interrupt();
 
-	/**
-	 * Indicates the game was interrupted and therefore should not be expected to ever end.
-	 * @return true if interrupt() is called, false otherwise.
-	 */
-	public abstract boolean interrupted();
+    /**
+     * Indicates the game was interrupted and therefore should not be expected to ever end.
+     * @return true if interrupt() is called, false otherwise.
+     */
+    public abstract boolean interrupted();
 
-	/**
-	 * Indicates the game is over, players fitness has been updated, and the game thread has terminated.
-	 * @return true if the game is over, false otherwise.
-	 */
-	public abstract boolean gameOver();
+    /**
+     * Indicates the game is over, players fitness has been updated, and the game thread has terminated.
+     * @return true if the game is over, false otherwise.
+     */
+    public abstract boolean gameOver();
 
-	/**
-	 * Instructs the GameController to run one round.
-	 */
-	public abstract void runRound();
+    /**
+     * Instructs the GameController to run one round.
+     */
+    public abstract void runRound();
 
-	/**
-	 * Instructs the game controller to run the game.
-	 * @param run if true, game runs until instructed to pause, interrupted, or game over.  If false, instructs a running game to pause.
-	 */
-	public abstract void setRunning(boolean run);
+    /**
+     * Instructs the game controller to run the game.
+     * @param run if true, game runs until instructed to pause, interrupted, or game over.  If false, instructs a running game to pause.
+     */
+    public abstract void setRunning(boolean run);
 
-	/**
-	 * Returns the PlayerBuilder used to create proper players for this GameController.  It is recommended, though not required, that
-	 * the GameController store one PlayerBuilder statically, and return the same one for all to getPlayerBuilder().
-	 * @return a PlayerBuilder to generate new players.
-	 */
-	public abstract PlayerBuilder getPlayerBuilder();
+    /**
+     * Returns the PlayerBuilder used to create proper players for this GameController.  It is recommended, though not required, that
+     * the GameController store one PlayerBuilder statically, and return the same one for all to getPlayerBuilder().
+     * @return a PlayerBuilder to generate new players.
+     */
+    public abstract PlayerBuilder getPlayerBuilder();
 
-	/**
-	 * Returns the DummyPlayerBuilder used to create dummy players for this GameController.  It is recommended, though not required, that
-	 * the GameController store one DummyPlayerBuilder statically, and return the same one for all to getDummyPlayerBuilder().
-	 * @return a DummyPlayerBuilder to generate new players.
-	 */
-	public abstract PlayerBuilder getDummyPlayerBuilder();
+    /**
+     * Returns the DummyPlayerBuilder used to create dummy players for this GameController.  It is recommended, though not required, that
+     * the GameController store one DummyPlayerBuilder statically, and return the same one for all to getDummyPlayerBuilder().
+     * @return a DummyPlayerBuilder to generate new players.
+     */
+    public abstract PlayerBuilder getDummyPlayerBuilder();
 
-	/**
-	 * Indicates the number of players per game.
-	 * @return the number of players to delegate to each game.
-	 */
-	public abstract int numPlayers();
+    /**
+     * Indicates the number of players per game.
+     * @return the number of players to delegate to each game.
+     */
+    public abstract int numPlayers();
 }

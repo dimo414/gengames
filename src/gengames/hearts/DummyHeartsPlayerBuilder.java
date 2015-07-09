@@ -13,23 +13,23 @@ import gengames.hearts.traits.PlayLoHiRndMid;
  */
 public class DummyHeartsPlayerBuilder extends PlayerBuilder {
 
-	/**
-	 * @see gengames.PlayerBuilder#genPlayer()
-	 */
-	@Override
-	public Player genPlayer() {
-		Trait[] arr = new Trait[1];
-		arr[0] = PlayLoHiRndMid.HIGH.pickOne();
+    /**
+     * @see gengames.PlayerBuilder#genPlayer()
+     */
+    @Override
+    public Player genPlayer() {
+        Trait[] arr = new Trait[1];
+        arr[0] = PlayLoHiRndMid.HIGH.pickOne();
 
-		return new DummyHeartsPlayer(arr);
-	}
+        return new DummyHeartsPlayer(arr);
+    }
 
-	/**
-	 * @see gengames.PlayerBuilder#genPlayer(gengames.Trait[])
-	 */
-	@Override
-	public Player genPlayer(Trait[] str) {
-		return new DummyHeartsPlayer(str);
-	}
+    /**
+     * @see gengames.PlayerBuilder#genPlayer(gengames.Trait[])
+     */
+    @Override
+    public Player genPlayer(Trait[] str) {
+        return new DummyHeartsPlayer(str);
+    }
 
 }

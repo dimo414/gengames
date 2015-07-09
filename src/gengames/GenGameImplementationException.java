@@ -6,14 +6,14 @@ package gengames;
  * @author Blake Lavender
  */
 public class GenGameImplementationException extends RuntimeException {
-	private static final long serialVersionUID = -141567286582424176L;
-	
-	/**
-	 * Constructor takes an error message.
-	 * @param err The message to explain why the error occurred.
-	 */
-	public GenGameImplementationException(String err)
-	{
-		super(err);
-	}
+    private static final long serialVersionUID = -141567286582424176L;
+    
+    /**
+     * Constructor takes an error message.
+     * @param err The message to explain why the error occurred.
+     */
+    public GenGameImplementationException(String err)
+    {
+        super(err);
+    }
 }

@@ -10,46 +10,46 @@ import gengames.Trait;
  * @author Blake Lavender
  */
 public enum NormalTrait implements Trait {
-	/** Play highest possible card */
-	HIGHEST,
-	/** Play lowest possible card */
-	LOWEST,
-	/** Play the highest possible card of the suit with the fewest cards */
-	SMALLESTSUITHIGH,
-	/** Play the highest possible card of the suit with the most cards */
-	LARGESTSUITHIGH,
-	/** Play the lowest possible card of the suit with the fewest cards */
-	SMALLESTSUITLOW,
-	/** Play the lowest possible card of the suit with the most cards */
-	LARGESTSUITLOW,
-	/** Play the highest possible heart */
-	HIGHHEARTS,
-	/** Play the highest possible spade */
-	HIGHSPADES,
-	/** Play the lowest possible heart */
-	LOWHEARTS,
-	/** Play the lowest possible spade */
-	LOWSPADES,
-	/** Play a random possible card */
-	RANDOM;
+    /** Play highest possible card */
+    HIGHEST,
+    /** Play lowest possible card */
+    LOWEST,
+    /** Play the highest possible card of the suit with the fewest cards */
+    SMALLESTSUITHIGH,
+    /** Play the highest possible card of the suit with the most cards */
+    LARGESTSUITHIGH,
+    /** Play the lowest possible card of the suit with the fewest cards */
+    SMALLESTSUITLOW,
+    /** Play the lowest possible card of the suit with the most cards */
+    LARGESTSUITLOW,
+    /** Play the highest possible heart */
+    HIGHHEARTS,
+    /** Play the highest possible spade */
+    HIGHSPADES,
+    /** Play the lowest possible heart */
+    LOWHEARTS,
+    /** Play the lowest possible spade */
+    LOWSPADES,
+    /** Play a random possible card */
+    RANDOM;
 
-	/**
-	 * @see gengames.Trait#mutate()
-	 */
-	public Trait mutate() {
-		NormalTrait choose = (NormalTrait) pickOne();
-		if (choose == this)
-			return mutate();
-		return choose;
-	}
+    /**
+     * @see gengames.Trait#mutate()
+     */
+    public Trait mutate() {
+        NormalTrait choose = (NormalTrait) pickOne();
+        if (choose == this)
+            return mutate();
+        return choose;
+    }
 
-	/**
-	 * @see gengames.Trait#pickOne()
-	 */
-	public Trait pickOne() {
-		NormalTrait[] arr = values();
-		int index = arr.length;
-		return arr[GAFrame.rnd.nextInt(index)];
-	}
+    /**
+     * @see gengames.Trait#pickOne()
+     */
+    public Trait pickOne() {
+        NormalTrait[] arr = values();
+        int index = arr.length;
+        return arr[GAFrame.rnd.nextInt(index)];
+    }
 
 }
