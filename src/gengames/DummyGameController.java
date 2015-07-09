@@ -25,8 +25,9 @@ public class DummyGameController extends GameController {
      * @param gameOutput The location to output content to.
      * @param running A boolean flag indicating if the game should start off running.
      */
+    // FIXME running is unused.
     public DummyGameController(Player[] players, JTextArea gameOutput,
-            boolean running) {
+            @SuppressWarnings("unused") boolean running) {
         for (int i = 0; i < players.length; i++) {
             players[i].addToFitness(i * 2 + 2);
             gameOutput.setText("Player " + i + " has " + players[i].fitness()

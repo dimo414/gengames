@@ -21,6 +21,7 @@ public enum PlayLoHiRndMid implements Trait {
     /**
      * @see gengames.Trait#mutate()
      */
+    @Override
     public Trait mutate() {
         PlayLoHiRndMid choose = (PlayLoHiRndMid) pickOne();
         if (choose == this)
@@ -31,6 +32,7 @@ public enum PlayLoHiRndMid implements Trait {
     /**
      * @see gengames.Trait#pickOne()
      */
+    @Override
     public Trait pickOne() {
         PlayLoHiRndMid[] arr = values();
         int index = arr.length;

@@ -41,7 +41,7 @@ import javax.swing.JTextArea;
  *  
  *  <h3>Runtime Inclusion of Custom GameControllers</h3>
  *  <p>This is the advisable method of including custom GameControllers - the user runs GAFrame and passes as runtime parameter the title
- *  and name of the class to refrence.  Multiple such pairs can be passed, all will be loaded.  This may seem more cumbersome than the compile-time
+ *  and name of the class to reference.  Multiple such pairs can be passed, all will be loaded.  This may seem more cumbersome than the compile-time
  *  version, however using an IDE like Eclipse it is very easy to load GenGames.jar as a referenced library and specify the runtime parameters.</p>
  *  
  * @author Michael Diamond
@@ -72,7 +72,7 @@ public class GAFrame extends JFrame implements ActionListener {
      * This field stores all known classes extending GameController and, as the key, the name they should be displayed as.
      * See the sections on Inclusion of Custom GameControllers for more information on how to use this field.
      */
-    public static final Map<String,Class<? extends GameController>> games = new Hashtable<String,Class<? extends GameController>>();
+    public static final Map<String,Class<? extends GameController>> games = new Hashtable<>();
     
     private JScrollPane gameScrollPane;
     private JScrollPane gaScrollPane;
@@ -104,7 +104,7 @@ public class GAFrame extends JFrame implements ActionListener {
     private JMenuItem crossoverTypeItem;
     private JMenuItem tournamentStyleItem;
 
-    private Hashtable<JMenuItem,Class<? extends GameController>> menus = new Hashtable<JMenuItem,Class<? extends GameController>>();
+    private Hashtable<JMenuItem,Class<? extends GameController>> menus = new Hashtable<>();
     private Class<? extends GameController> gameContClass = null;
     private GAController ga = null;
 
@@ -143,6 +143,7 @@ public class GAFrame extends JFrame implements ActionListener {
     /**
      * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
      */
+    @Override
     public void actionPerformed(ActionEvent evt) {
         try {
             Object src = evt.getSource();

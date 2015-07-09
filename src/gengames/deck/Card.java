@@ -52,6 +52,7 @@ public class Card implements Comparable<Card> {
      * @see ValueComparator
      * @see java.lang.Comparable#compareTo(java.lang.Object)
      */
+    @Override
     public int compareTo(Card that) {
         if (!suit.equals(that.suit))
             return suit.compareTo(that.suit);

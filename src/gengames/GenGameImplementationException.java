@@ -10,10 +10,19 @@ public class GenGameImplementationException extends RuntimeException {
     
     /**
      * Constructor takes an error message.
-     * @param err The message to explain why the error occurred.
+     * @param msg The message to explain why the error occurred.
      */
-    public GenGameImplementationException(String err)
+    public GenGameImplementationException(String msg)
     {
-        super(err);
+        super(msg);
+    }
+    
+    /**
+     * Constructor takes an error message and a cause. 
+     * @param msg The message to explain why the error occurred.
+     * @param c The exception that caused this exception.
+     */
+    public GenGameImplementationException(String msg, Throwable c) {
+        super(msg, c);
     }
 }

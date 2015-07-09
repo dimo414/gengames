@@ -74,6 +74,7 @@ public abstract class Player implements Comparable<Player> {
      * @return an integer representing which player is better.
      * @see java.lang.Comparable#compareTo(java.lang.Object)
      */
+    @Override
     public abstract int compareTo(Player other);
 
     /**
@@ -86,5 +87,6 @@ public abstract class Player implements Comparable<Player> {
      * A shorter description of the player suitable for display in the GAFrame.
      * @see java.lang.Object#toString()
      */
+    @Override
     public abstract String toString();
 }

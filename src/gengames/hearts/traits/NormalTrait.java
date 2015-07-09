@@ -36,6 +36,7 @@ public enum NormalTrait implements Trait {
     /**
      * @see gengames.Trait#mutate()
      */
+    @Override
     public Trait mutate() {
         NormalTrait choose = (NormalTrait) pickOne();
         if (choose == this)
@@ -46,6 +47,7 @@ public enum NormalTrait implements Trait {
     /**
      * @see gengames.Trait#pickOne()
      */
+    @Override
     public Trait pickOne() {
         NormalTrait[] arr = values();
         int index = arr.length;

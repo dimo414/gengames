@@ -17,6 +17,7 @@ public enum PassingQueen implements Trait {
     /**
      * @see gengames.Trait#mutate()
      */
+    @Override
     public Trait mutate() {
         PassingQueen choose = (PassingQueen) pickOne();
         if (choose == this)
@@ -27,6 +28,7 @@ public enum PassingQueen implements Trait {
     /**
      * @see gengames.Trait#pickOne()
      */
+    @Override
     public Trait pickOne() {
         PassingQueen[] arr = values();
         int index = arr.length;

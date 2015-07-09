@@ -162,7 +162,7 @@ public class HeartsPlayer extends Player {
         myHand.addAll(cards);
     }
 
-    private Card pickCard(NormalTrait trait, Cards possible) {
+    private static Card pickCard(NormalTrait trait, Cards possible) {
         Collections.sort(possible, new ValueComparator());
         switch (trait) {
         case HIGHEST:
@@ -596,7 +596,7 @@ public class HeartsPlayer extends Player {
         }
     }
 
-    private Cards getSuit(Cards set, Suit suit) {
+    private static Cards getSuit(Cards set, Suit suit) {
         Cards cards = new Cards();
         for (Card c : set) {
             if (c.getSuit().equals(suit))
@@ -605,10 +605,10 @@ public class HeartsPlayer extends Player {
         return cards;
     }
 
-    private Cards selectSuit(Cards possible, boolean smallest) {
+    private static Cards selectSuit(Cards possible, boolean smallest) {
 
-        ArrayList<Cards> suits = new ArrayList<Cards>();
-        ArrayList<Cards> nonEmptySuits = new ArrayList<Cards>();
+        ArrayList<Cards> suits = new ArrayList<>();
+        ArrayList<Cards> nonEmptySuits = new ArrayList<>();
 
         suits.add(new Cards()); // clubs
         suits.add(new Cards()); // diamonds
@@ -646,11 +646,11 @@ public class HeartsPlayer extends Player {
         return nonEmptySuits.get(selected);
     }
 
-    private Cards largestSuit(Cards possible) {
+    private static Cards largestSuit(Cards possible) {
         return selectSuit(possible, false);
     }
 
-    private Cards smallestSuit(Cards possible) {
+    private static Cards smallestSuit(Cards possible) {
         return selectSuit(possible, true);
     }
 

@@ -140,7 +140,7 @@ public class GAController implements Runnable {
             output.setText("Starting a new dummy population with a size of "
                     + populationSize + "\n");
 
-            thePopulation = new ArrayList<Player>(popSize);
+            thePopulation = new ArrayList<>(popSize);
 
             for (int i = 0; i < popSize; i++) {
                 thePopulation.add(dummyBuilder.genPlayer());
@@ -149,7 +149,7 @@ public class GAController implements Runnable {
             output.setText("Starting a new population with a size of "
                     + populationSize + "\n");
 
-            thePopulation = new ArrayList<Player>(popSize);
+            thePopulation = new ArrayList<>(popSize);
 
             for (int i = 0; i < popSize; i++) {
                 thePopulation.add(playerBuilder.genPlayer());
@@ -173,6 +173,7 @@ public class GAController implements Runnable {
      * Starts the GA thread, which runs games and generations, or waits for run instructions from the GAFrame.
      * @see java.lang.Runnable#run()
      */
+    @Override
     public void run() {
         try {
             while (!(running || runGen || runGame || runRound)) {
@@ -239,17 +240,13 @@ public class GAController implements Runnable {
             arr[1] = gameOutput;
             arr[2] = running || runGen || runGame;
 
-            Exception exc = null;
             for (Constructor<?> con : constructs) {
                 try {
                     game = (GameController) con.newInstance(arr);
                 } catch (Exception e) {
-                    exc = e;
+                    e.printStackTrace();
+                    throw new GenGameImplementationException("No acceptable constructor found.", e);
                 }
-            }
-            if (game == null) {
-                exc.printStackTrace();
-                throw new GenGameImplementationException("No acceptable constructor found.");
             }
         }
         runGame = false;
@@ -313,7 +310,7 @@ public class GAController implements Runnable {
     }
 
     private void prunePopulation(double survivors) {
-        ArrayList<Player> newPopulation = new ArrayList<Player>(populationSize);
+        ArrayList<Player> newPopulation = new ArrayList<>(populationSize);
         // sort the population by their fitness
         Collections.sort(thePopulation);
         // find the cutoff (survivors from dead)
